@@ -1,33 +1,19 @@
 <!doctype html>
 <html lang="en-US">
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Q7KSM1SBB"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-2Q7KSM1SBB');
-	</script>
 	<meta charset="utf-8"/>
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>{{ title or metadata.title }}</title>
 	<meta name="description" content="{{ description or metadata.description }}" />
 
-	{#- Atom and JSON feeds included by default #}
-	<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ title or metadata.title }}" />
-	<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ title or metadata.title }}" />
-	<meta name='robots' content='max-image-preview:large'/>
-
-	<link rel="canonical" href="https://benfarrell.com{{ page.url or metadata.url }}"/>
+	<link rel="canonical" href="{{ metadata.url }}{{ page.url }}"/>
 	<meta property="og:locale" content="en_US"/>
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="{{ title or metadata.title }}"/>
 	<meta property="og:description" content="{{ description or metadata.description }}"/>
-	<meta property="og:url" content="https://benfarrell.com{{ page.url or metadata.url }}"/>
-	<meta property="og:site_name" content="Ben Farrell"/>
+	<meta property="og:url" content="{{ metadata.url }}{{ page.url }}"/>
+	<meta property="og:site_name" content="{{ metadata.title }}"/>
 	<meta property="og:image" content="{{ coverImage or metadata.image }}" />
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:description" content="{{ description or metadata.description }}"/>
@@ -35,8 +21,7 @@
 	<meta name="twitter:image" content="{{ coverImage or metadata.image }}" />
 
 	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
-	<link rel="alternate" type="application/json+oembed" href="https://benfarrell.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbenfarrell.com%2F"/>
-	<link rel="alternate" type="text/xml+oembed" href="https://benfarrell.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbenfarrell.com%2F&#038;format=xml"/>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
 	<link href="/css/index.css" rel="stylesheet" />
 	<link
 		href="/css/prism-okaidia.css"
@@ -59,23 +44,19 @@
 
 <header id="top-menu" class="top-bar" itemscope="itemscope">
 	<div class="topbar-title title-logo" itemscope="itemscope" role="banner">
-		<a href="https://benfarrell.com/" title="Ben Farrell - creating digital hugs">
-			<h1 id="sitetitle">Ben Farrell</h1>
+		<a href="/" title="The Fish Tank - Art from the Attention Defected">
+			<h1 id="sitetitle">The Fish Tank</h1>
 		</a>
 	</div>
 
 	<div id="menu-container" class="menu-container">
 		<nav class="richprimarymenu" role="navigation">
 			<ul id="menu-main-menu" class="vertical large-horizontal menu" data-responsive-menu="accordion large-dropdown">
-				<li id="menu-item-1529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1529"><a href="/resume/">Resume</a></li>
-				<li id="menu-item-1722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1722"><a href="/blog">Blog</a></li>
+				<li class="menu-item"><a href="/">Home</a></li>
+				<li class="menu-item"><a href="/portfolio/">Portfolio</a></li>
+				<li class="menu-item"><a href="/contact/">Contact Us</a></li>
 			</ul>
 		</nav>
-		<ul id="iconmenu" class="menu richiconmenu">
-			<li id="searchicon" class="icon-search menu-item">
-				<a href="/search">Search</a>
-			</li>
-		</ul>
 	</div>
 </header>
 
@@ -84,32 +65,38 @@
 </main>
 
 <footer id="site-footer">
-	<aside>
-			<canvas id="shader"></canvas>
-			<div class="social-buttons">
-				<a target="_blank" href="https://bsky.app/profile/benforreal.bsky.social" rel="noopener"><img alt="bluesky" src="/images/social-1_round-bluesky.svg"/></a>
-				<a target="_blank" href="https://github.com/bengfarrell" rel="noopener"><img alt="github" src="/images/social-1_round-github.svg"/></a>
-				<a target="_blank" href="https://www.linkedin.com/in/bfarrellforever/" rel="noopener"><img alt="linkedin" src="/images/social-1_round-linkedin.svg"/></a>
-				<a target="_blank" href="https://www.instagram.com/ben.4.real/" rel="noopener"><img alt="instagram" src="/images/social-1_round-instagram.svg"/></a>
-				<a target="_blank" href="https://benfarrell.com/feed/feed.json" rel="noopener"><img alt="rss" src="/images/social-1_round-rss.svg"/></a>
-			</div>
-
-			<div class="recent-moments">
-				<a target="_blank" href="/blog/2019-03-24-web-components-in-action/" rel="noopener"><img width="75" height="75" alt="Web Components in Action" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/20044714/Farrell-WebC-MEAP-HI-100x100.jpg"/></a><a target="_blank" href="https://www.commarts.com/project/24685/self-composed" rel="noopener"><img width="75" height="75" alt="SFMOMA Self Composed" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23231356/893532_102_1160_NzE5NDgzOTc4LTExODA2MTgzMjc-100x100.jpg"/></a><a target="_blank" href="https://blog.adobe.com/en/publish/2019/02/01/visualizing-the-invisible" rel="noopener"><img width="75" height="75" alt="MOPA Note to Self" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23231824/43244797_568274210297436_1416940896466467256_n-100x100.jpg"/></a><a target="_blank" href="/blog/2019-03-24-adobe-max-sneaks/" rel="noopener"><img width="75" height="75" alt="Project Sonicscape at MAX Sneaks" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23232820/DMi5QzPVoAA_VfL-100x100.jpg"/></a><a target="_blank" href="/speaking-engagements/" rel="noopener"><img width="75" height="75" alt="Adobe's Immersive Future Talk" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23232421/image1-100x100.jpg"/></a>
-			</div>
-	</aside>
+	<div class="social-section">
+		<h3>Social</h3>
+		<div class="social-buttons">
+			<a href="https://www.facebook.com/Attentiondefectedart" target="_blank" rel="noopener" aria-label="Facebook">
+				<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+					<path d="M20 12.047C20 7.603 16.418 4 12 4s-8 3.603-8 8.047c0 4.017 2.925 7.346 6.75 7.95v-5.624H8.719v-2.326h2.031v-1.773c0-2.017 1.194-3.13 3.022-3.13.875 0 1.79.157 1.79.157v1.98h-1.008c-.994 0-1.304.62-1.304 1.257v1.51h2.219l-.355 2.325H13.25v5.624c3.825-.604 6.75-3.933 6.75-7.95z"></path>
+				</svg>
+			</a>
+			<a href="https://www.instagram.com/carlaartdozier" target="_blank" rel="noopener" aria-label="Instagram">
+				<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+					<path d="M14.667 12a2.57 2.57 0 0 0-.782-1.885A2.57 2.57 0 0 0 12 9.333a2.57 2.57 0 0 0-1.885.782A2.57 2.57 0 0 0 9.333 12c0 .736.26 1.365.782 1.885.52.521 1.149.782 1.885.782a2.57 2.57 0 0 0 1.885-.782c.521-.52.782-1.149.782-1.885zm1.437 0c0 1.139-.4 2.108-1.198 2.906-.798.799-1.767 1.198-2.906 1.198-1.139 0-2.108-.4-2.906-1.198-.799-.798-1.198-1.767-1.198-2.906 0-1.139.4-2.108 1.198-2.906.798-.799 1.767-1.198 2.906-1.198 1.139 0 2.108.4 2.906 1.198.799.798 1.198 1.767 1.198 2.906zm1.125-4.27c0 .263-.094.489-.281.676a.923.923 0 0 1-.677.282.923.923 0 0 1-.677-.282.923.923 0 0 1-.281-.677c0-.264.093-.49.28-.677a.923.923 0 0 1 .678-.281c.264 0 .49.094.677.281a.923.923 0 0 1 .281.677zM12 5.437l-.797-.006a56.514 56.514 0 0 0-1.099 0c-.25.004-.585.014-1.005.032-.42.017-.778.052-1.073.104a4.177 4.177 0 0 0-.745.192c-.347.14-.653.34-.916.605-.264.263-.466.569-.605.916-.076.202-.14.45-.192.745a8.255 8.255 0 0 0-.104 1.073c-.018.42-.028.755-.032 1.005-.003.25-.003.616 0 1.1l.006.796-.006.797c-.003.483-.003.849 0 1.099.004.25.014.585.032 1.005.017.42.052.778.104 1.073.052.295.116.543.192.745.14.347.34.653.605.916.263.264.569.466.916.605.202.076.45.14.745.192.295.052.653.087 1.073.104.42.018.755.028 1.005.032.25.003.616.003 1.1 0l.796-.005.797.005c.483.003.849.003 1.099 0 .25-.004.585-.014 1.005-.032.42-.017.778-.052 1.073-.104.295-.052.543-.116.745-.192.347-.14.653-.34.916-.605.264-.263.466-.569.605-.916.076-.202.14-.45.192-.745.052-.295.087-.653.104-1.073.018-.42.028-.755.032-1.005.003-.25.003-.616 0-1.1L18.562 12l.006-.797c.003-.483.003-.849 0-1.099a38.59 38.59 0 0 0-.032-1.005 8.255 8.255 0 0 0-.104-1.073 4.177 4.177 0 0 0-.192-.745 2.703 2.703 0 0 0-.605-.916 2.703 2.703 0 0 0-.916-.605 4.177 4.177 0 0 0-.745-.192 8.255 8.255 0 0 0-1.073-.104c-.42-.018-.755-.028-1.005-.032-.25-.003-.616-.003-1.1 0L12 5.438zM20 12c0 1.59-.017 2.691-.052 3.302-.07 1.445-.5 2.563-1.292 3.354-.791.792-1.91 1.222-3.354 1.292-.611.035-1.712.052-3.302.052s-2.691-.017-3.302-.052c-1.445-.07-2.563-.5-3.354-1.292-.792-.791-1.222-1.91-1.292-3.354C4.017 14.691 4 13.59 4 12s.017-2.691.052-3.302c.07-1.445.5-2.563 1.292-3.354.791-.792 1.91-1.222 3.354-1.292C9.309 4.017 10.41 4 12 4s2.691.017 3.302.052c1.445.07 2.563.5 3.354 1.292.792.791 1.222 1.91 1.292 3.354.035.611.052 1.712.052 3.302z"></path>
+				</svg>
+			</a>
+			<a href="https://www.twitter.com/@TheFishTankArt" target="_blank" rel="noopener" aria-label="Twitter">
+				<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+					<path fill-rule="evenodd" d="M9.026 19.01c6.038 0 9.341-5.007 9.341-9.341 0-.141 0-.282-.006-.423A6.689 6.689 0 0020 7.543a6.654 6.654 0 01-1.889.519 3.303 3.303 0 001.447-1.819 6.53 6.53 0 01-2.087.794A3.277 3.277 0 0015.076 6a3.287 3.287 0 00-3.284 3.285c0 .256.032.505.083.749a9.323 9.323 0 01-6.767-3.432 3.292 3.292 0 001.018 4.386 3.32 3.32 0 01-1.486-.41v.045a3.29 3.29 0 002.632 3.22 3.198 3.198 0 01-.865.115c-.21 0-.416-.019-.614-.057a3.283 3.283 0 003.067 2.28 6.585 6.585 0 01-4.079 1.408A6.32 6.32 0 014 17.544a9.339 9.339 0 005.026 1.466z"></path>
+				</svg>
+			</a>
+			<a href="https://www.youtube.com/channel/UCCQqjjh6doT8Koc5GNROUtw" target="_blank" rel="noopener" aria-label="YouTube">
+				<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+					<path d="M20.624 8.034c.376 1.451.376 4.48.376 4.48s0 3.027-.376 4.478a2.258 2.258 0 0 1-1.592 1.62C17.63 19 12 19 12 19s-5.629 0-7.032-.389a2.258 2.258 0 0 1-1.592-1.619C3 15.541 3 12.513 3 12.513s0-3.028.376-4.479c.207-.8.817-1.431 1.592-1.645C6.37 6 12 6 12 6s5.629 0 7.032.389a2.294 2.294 0 0 1 1.592 1.645zm-10.465 7.827l4.705-3-4.705-3v6z"></path>
+				</svg>
+			</a>
+		</div>
+	</div>
 
 	<div id="copyright" class="row">
 		<div class="columns">
-			&copy;&nbsp;2024&nbsp;					  <a href="https://benfarrell.com/" title="Ben Farrell - creating digital hugs">
-			Ben Farrell					  </a> &nbsp;&nbsp;ben@benfarrell.com
+			&copy;&nbsp;2025&nbsp;<a href="/" title="The Fish Tank">The Fish Tank</a> - All Rights Reserved.
 		</div>
 	</div><!-- #copyright -->
-
-
-	<div class="&#114;b row text-center">&#087;&#111;&#114;&#100;&#080;&#114;&#101;&#115;&#115; &#084;&#104;&#101;m&#101; &#098;&#121; <a href="&#104;tt&#112;&#115;://&#82;&#105;&#99;&#104;&#87;&#80;.&#99;o&#109;/">&#82;&#105;&#99;&#104;&#87;&#80;</a></div>
 </footer>
 
-<script src="/js/shaders.js"></script>
 </body>
 </html>

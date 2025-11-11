@@ -1,12 +1,12 @@
 module.exports = {
-	title: "Ben Farrell dot com",
-	url: "https://benfarrell.com",
-	image: "https://benfarrell.com/images/benvector.svg",
+	title: "The Fish Tank",
+	url: "https://thefishtank.com",
+	image: "/images/fishtank-logo.svg",
 	language: "en",
-	description: "Creating digital hugs since the 20th century.",
+	description: "Art from the Attention Defected. Mixed media art including oils, tattoo ink, spray paint, acrylics, and water colors.",
 	author: {
-		name: "Ben Farrell",
-		email: "ben@benfarrell.com",
-		url: "https://benfarrell.com"
+		name: "The Fish Tank",
+		email: "contact@thefishtank.com",
+		url: "https://thefishtank.com"
 	}
 }

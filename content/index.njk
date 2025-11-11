@@ -1,26 +1,82 @@
 ---
 layout: layouts/home.njk
+eleventyExcludeFromCollections: true
 ---
 
 <div id="container" class="row">
-	<div id="primary" class="large-7 medium-9 small-11 small-centered columns">
-		<article class="articlebox page type-page status-publish hentry">
-			<header class="entry-header entry-header-single">
-				<h1 class="entry-title">
-					<img width="150" height="150" src="/images/benvector.svg"/>				</h1>
-			</header>
-			<div class="entry-content">
-				<p><span class="big-text">I work as a Prototyper on the<a href="https://adobe.design" target="_blank" rel="noopener"><img class="alignnone" src="/images/ad.gif" alt="Adobe Design" width="58" height="53"/></a>Prototyping Team. I create stuff with a lot of different tools and languages, but the web is my favorite. In fact I wrote a<a href="https://www.manning.com/books/web-components-in-action" target="_blank" rel="noopener"><img loading="lazy" class="alignnone wp-image-1693" src="/images/book.gif" alt="book" width="68" height="60"/></a>on Web Components. Over the past 25 years, I&#8217;ve worked on some<a href="/awards/" target="_blank" rel="noopener"><img loading="lazy" class="alignnone wp-image-1693" src="/images/trophy.gif" alt="book" width="45" height="70"/></a>winning projects with Adobe, various startups, and creative agencies.</span></p>
-				<p><span class="big-text"><br/>
-I live in the East Bay of California with my sci-fi/fantasy<a href="https://rebeccagomezfarrell.com/" target="_blank" rel="noopener"><img loading="lazy" class="alignnone" src="/images/writing.gif" alt="Writing" width="59" height="50"/></a>wife and two cats.</span></p>
-				<p><span class="big-text"><br/>
-I love playing with all sorts of mediums and techonologies, but I'm currently deep-diving on music and making physical things with digital tech. Whatever I'm thinking about lately will probably be highlighted in my
-					most recent blog post:
-				{% set postslist = collections.posts | head(-1) %}
-				<a href="{{ postslist[0].url }}">&#8220;{{ postslist[0].data.title }}&#8221;</a></span></p>
-			</div><!-- .entry-content -->
-		</article>
+	<div id="primary" class="large-10 medium-11 small-12 small-centered columns">
+		
+		<section class="hero-section" style="background: linear-gradient(135deg, rgba(42, 157, 143, 0.85) 0%, rgba(231, 111, 81, 0.85) 100%), url('/images/hero-painting.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply;">
+			<h1 class="hero-title">Art from the Attention Defected presents: The Fish Tank</h1>
+			<div class="hero-cta">
+				<a href="/contact/" class="button">Come Say Hi</a>
+				<a href="/portfolio/" class="button button-outline">See What I'm Up To</a>
+			</div>
+		</section>
+
+		<section class="promo-section">
+			<div class="promo-box">
+				<h3>Win a Free Painting</h3>
+				<p>Shoot us an email for your chance to win a free painting!</p>
+				<a href="/contact/" class="button">Enter to Win</a>
+			</div>
+		</section>
+
+		<section class="featured-works-section">
+			<h2>Featured Works</h2>
+			<div class="featured-gallery">
+				<div class="featured-item">
+					<img src="/images/portfolio/clouds.jpg" alt="Clouds" />
+				</div>
+				<div class="featured-item">
+					<img src="/images/portfolio/bridge.jpg" alt="Bridge" />
+				</div>
+				<div class="featured-item">
+					<img src="/images/portfolio/blood-moon-falls.jpg" alt="Blood Moon Falls" />
+				</div>
+				<div class="featured-item">
+					<img src="/images/portfolio/jellyfish-hell.jpg" alt="Jellyfish Hell" />
+				</div>
+				<div class="featured-item">
+					<img src="/images/portfolio/lg-moonlite-bridge.jpg" alt="Moonlit Bridge" />
+				</div>
+				<div class="featured-item">
+					<img src="/images/portfolio/water-seahorse.jpg" alt="Water Seahorse" />
+				</div>
+			</div>
+			<div class="view-more-link">
+				<a href="/portfolio/" class="button">View Full Portfolio</a>
+			</div>
+		</section>
+
+		<section class="about-section">
+			<article class="about-box">
+				<h2>About the Artist</h2>
+				<div class="entry-content">
+					<p>A little bit like Mary Poppins, if she swore, had tattoos, smoked pot and had a pet ewok.</p>
+					
+					<p>I love my grandbabies, furbabies, human babies, family, and husband. In various order from day to day.</p>
+					
+					<p>I took motivational speaking from a sith college and excelled at it. I believe I was B.D.S.M. Barbie in a former life. I enjoy karaoke with my husband. I Love, Love, Love positive energies and random acts of kindness, putting love in the universe and complementing beautiful people.</p>
+					
+					<p><em>"Try to leave the earth a better place than you found it."</em> - Someone who is not an asshole</p>
+				</div>
+			</article>
+
+			<article class="about-box">
+				<h2>My Medium</h2>
+				<div class="entry-content">
+					<p>I use many different mediums, such as oils, tattoo ink, spray paint, acrylics, and water colors. Oh for the........love of run on blah, blah., I will be blunt. I'm a shiny squirrel kinda gal, all the mediums, at any point. No rhyme, No reason, just beautiful chaos!</p>
+				</div>
+			</article>
+
+			<article class="about-box">
+				<h2>My Inspirations</h2>
+				<div class="entry-content">
+					<p>Are everywhere! I can find inspiration in a dream or a T.V. show. I have always been inspired by nature and animals. Waterfalls, space, and ocean themes are very common in my work. I seem to find a lot of commonality with people in the more nightmare or dark side of my expression. Take that for what it's worth. Music is always, and will always, be the backbeat and driving force behind the finish of any inspired idea I have.</p>
+				</div>
+			</article>
+		</section>
+
 	</div><!-- #primary -->
-
 </div> <!-- #container -->
-
