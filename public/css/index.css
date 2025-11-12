@@ -72,6 +72,34 @@ body {
 	line-height: 1.6;
 }
 
+/* Global Heading Styles */
+h2 {
+	font-size: 1.5rem;
+	color: var(--color-white);
+	margin-bottom: 1rem;
+	font-family: var(--font-display);
+	text-shadow: none;
+}
+
+h3 {
+	color: var(--color-white);
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	font-family: var(--font-display);
+	font-weight: 600;
+}
+
+.highlight-text {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: var(--neon-cyan);
+	background: linear-gradient(90deg, var(--neon-magenta), var(--neon-cyan));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	margin-top: 1.5rem;
+}
+
 /* Hide anchor links */
 .header-anchor,
 a.header-anchor,
@@ -384,14 +412,6 @@ section {
 	box-shadow: var(--shadow-large);
 }
 
-.column-content h2 {
-	font-size: 1.5rem;
-	color: var(--color-white);
-	margin-bottom: 1rem;
-	font-family: var(--font-display);
-	text-shadow: none;
-}
-
 .column-content p {
 	font-size: 1.1rem;
 	margin-bottom: 1rem;
@@ -472,13 +492,6 @@ section {
 	padding: 2rem 0;
 }
 
-.social-section h3 {
-	color: var(--color-white);
-	font-size: 2rem;
-	margin-bottom: 1.5rem;
-	font-family: var(--font-display);
-}
-
 .social-buttons {
 	display: flex;
 	gap: 1.5rem;
@@ -527,14 +540,6 @@ section {
 	max-width: 1200px;
 }
 
-.articlebox h2 {
-	font-size: 1.5rem;
-	color: var(--color-white);
-	font-family: var(--font-display);
-	margin-bottom: 1.5rem;
-	text-shadow: none;
-}
-
 .entry-header-single {
 	text-align: center;
 	margin-bottom: 3rem;
@@ -578,16 +583,6 @@ section {
 
 .portfolio-gallery-section {
 	border-bottom: none;
-}
-
-.portfolio-intro-section h2,
-.portfolio-latest-section h2,
-.portfolio-gallery-section h2 {
-	font-size: 1.5rem;
-	color: var(--color-white);
-	font-family: var(--font-display);
-	margin-bottom: 1.5rem;
-	text-shadow: none;
 }
 
 .portfolio-intro-section p {
