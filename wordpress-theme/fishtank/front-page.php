@@ -19,7 +19,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="two-column">
 			<div class="column-image">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/jellyfish-hell.jpg" alt="Jellyfish Hell artwork" />
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/jellyfish-hell.jpg" alt="Jellyfish Hell artwork" />
 			</div>
 			<div class="column-content">
 				<h2>Mixed Media Madness</h2>
@@ -41,19 +41,37 @@ get_header(); ?>
 <section class="section-light">
 	<div class="container">
 		<h2 class="section-title">Featured Works</h2>
-		<div class="featured-grid">
-			<div class="featured-item">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/blood-moon-falls.jpg" alt="Blood Moon Falls" />
-			</div>
-			<div class="featured-item">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/lg-moonlite-bridge.jpg" alt="Moonlit Bridge" />
-			</div>
-			<div class="featured-item">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/water-seahorse.jpg" alt="Water Seahorse" />
-			</div>
-			<div class="featured-item">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/spooky-moon.jpg" alt="Spooky Moon" />
-			</div>
+<div class="featured-grid">
+			<?php
+			// Get images with "featured" in gallery_category custom field
+			$featured_args = array(
+				'post_type' => 'attachment',
+				'post_mime_type' => 'image',
+				'posts_per_page' => 4, // Limit to 4 for homepage
+				'post_status' => 'inherit',
+				'meta_query' => array(
+					array(
+						'key' => 'gallery_category',
+						'value' => 'latest',
+						'compare' => 'LIKE'
+					)
+				)
+			);
+			$featured_images = get_posts($featured_args);
+
+			if ($featured_images) {
+				foreach($featured_images as $image) {
+					$img_url = wp_get_attachment_url($image->ID);
+					$alt_text = get_post_meta($image->ID, '_wp_attachment_image_alt', true);
+					$title = $image->post_title ?: $alt_text ?: 'Untitled';
+					echo '<div class="featured-item">';
+					echo '<a href="' . esc_url($img_url) . '" target="_blank" data-title="' . esc_attr($title) . '">';
+					echo '<img src="' . esc_url($img_url) . '" alt="' . esc_attr($alt_text) . '" />';
+					echo '</a>';
+					echo '</div>';
+				}
+			}
+			?>
 		</div>
 		<div class="view-more-center">
 			<a href="<?php echo esc_url(home_url('/portfolio/')); ?>" class="button">View All Artwork</a>
@@ -72,7 +90,7 @@ get_header(); ?>
 				<p><em>"Try to leave the earth a better place than you found it."</em></p>
 			</div>
 			<div class="column-image">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/clouds.jpg" alt="Clouds artwork" />
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/clouds.jpg" alt="Clouds artwork" />
 			</div>
 		</div>
 	</div>
