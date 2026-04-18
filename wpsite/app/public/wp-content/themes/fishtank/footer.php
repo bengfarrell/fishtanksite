@@ -1,52 +1,3 @@
-<!doctype html>
-<html lang="en-US">
-<head>
-	<meta charset="utf-8"/>
-	<meta http-equiv="x-ua-compatible" content="ie=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>{{ title or metadata.title }}</title>
-	<meta name="description" content="{{ description or metadata.description }}" />
-
-	<link rel="canonical" href="{{ metadata.url }}{{ page.url }}"/>
-	<meta property="og:locale" content="en_US"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:title" content="{{ title or metadata.title }}"/>
-	<meta property="og:description" content="{{ description or metadata.description }}"/>
-	<meta property="og:url" content="{{ metadata.url }}{{ page.url }}"/>
-	<meta property="og:site_name" content="{{ metadata.title }}"/>
-	<meta property="og:image" content="{{ coverImage or metadata.image }}" />
-	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:description" content="{{ description or metadata.description }}"/>
-	<meta name="twitter:title" content="{{ title or metadata.title }}"/>
-	<meta name="twitter:image" content="{{ coverImage or metadata.image }}" />
-
-	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
-	<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
-	<link href="/css/index.css" rel="stylesheet" />
-</head>
-<body class="{% if page.url == '/' %}page-home{% else %}page-other{% endif %}">
-
-<header id="top-menu" class="top-bar centered-nav" itemscope="itemscope">
-	<nav class="main-nav" role="navigation">
-		<ul class="nav-left">
-			<li class="menu-item"><a href="/">Home</a></li>
-			<li class="menu-item"><a href="/portfolio/">Portfolio</a></li>
-		</ul>
-
-	<div class="logo-center" itemscope="itemscope" role="banner">
-		<a href="/" title="Art from the Attention Defected">
-			<h1 id="sitetitle">Art from the Attention Defected</h1>
-		</a>
-	</div>
-
-		<ul class="nav-right">
-			<li class="menu-item"><a href="/contact/">Contact Us</a></li>
-		</ul>
-	</nav>
-</header>
-
-<main id="skip">
-	{{ content | safe }}
 </main>
 
 <footer id="site-footer">
@@ -55,21 +6,23 @@
 	<div class="footer-content">
 		<div class="social-section">
 			<h3>Social</h3>
+			<div class="social-content-box">
 			<div class="social-buttons">
 				<a href="https://www.facebook.com/Attentiondefectedart" target="_blank" rel="noopener" aria-label="Facebook">
 					<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
 						<path d="M20 12.047C20 7.603 16.418 4 12 4s-8 3.603-8 8.047c0 4.017 2.925 7.346 6.75 7.95v-5.624H8.719v-2.326h2.031v-1.773c0-2.017 1.194-3.13 3.022-3.13.875 0 1.79.157 1.79.157v1.98h-1.008c-.994 0-1.304.62-1.304 1.257v1.51h2.219l-.355 2.325H13.25v5.624c3.825-.604 6.75-3.933 6.75-7.95z"></path>
 					</svg>
 				</a>
-				<a href="https://www.instagram.com/carlaartdozier" target="_blank" rel="noopener" aria-label="Instagram">
+				<a href="https://www.instagram.com/attentiondefected" target="_blank" rel="noopener" aria-label="Instagram">
 					<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
 						<path d="M14.667 12a2.57 2.57 0 0 0-.782-1.885A2.57 2.57 0 0 0 12 9.333a2.57 2.57 0 0 0-1.885.782A2.57 2.57 0 0 0 9.333 12c0 .736.26 1.365.782 1.885.52.521 1.149.782 1.885.782a2.57 2.57 0 0 0 1.885-.782c.521-.52.782-1.149.782-1.885zm1.437 0c0 1.139-.4 2.108-1.198 2.906-.798.799-1.767 1.198-2.906 1.198-1.139 0-2.108-.4-2.906-1.198-.799-.798-1.198-1.767-1.198-2.906 0-1.139.4-2.108 1.198-2.906.798-.799 1.767-1.198 2.906-1.198 1.139 0 2.108.4 2.906 1.198.799.798 1.198 1.767 1.198 2.906zm1.125-4.27c0 .263-.094.489-.281.676a.923.923 0 0 1-.677.282.923.923 0 0 1-.677-.282.923.923 0 0 1-.281-.677c0-.264.093-.49.28-.677a.923.923 0 0 1 .678-.281c.264 0 .49.094.677.281a.923.923 0 0 1 .281.677zM12 5.437l-.797-.006a56.514 56.514 0 0 0-1.099 0c-.25.004-.585.014-1.005.032-.42.017-.778.052-1.073.104a4.177 4.177 0 0 0-.745.192c-.347.14-.653.34-.916.605-.264.263-.466.569-.605.916-.076.202-.14.45-.192.745a8.255 8.255 0 0 0-.104 1.073c-.018.42-.028.755-.032 1.005-.003.25-.003.616 0 1.1l.006.796-.006.797c-.003.483-.003.849 0 1.099.004.25.014.585.032 1.005.017.42.052.778.104 1.073.052.295.116.543.192.745.14.347.34.653.605.916.263.264.569.466.916.605.202.076.45.14.745.192.295.052.653.087 1.073.104.42.018.755.028 1.005.032.25.003.616.003 1.1 0l.796-.005.797.005c.483.003.849.003 1.099 0 .25-.004.585-.014 1.005-.032.42-.017.778-.052 1.073-.104.295-.052.543-.116.745-.192.347-.14.653-.34.916-.605.264-.263.466-.569.605-.916.076-.202.14-.45.192-.745.052-.295.087-.653.104-1.073.018-.42.028-.755.032-1.005.003-.25.003-.616 0-1.1L18.562 12l.006-.797c.003-.483.003-.849 0-1.099a38.59 38.59 0 0 0-.032-1.005 8.255 8.255 0 0 0-.104-1.073 4.177 4.177 0 0 0-.192-.745 2.703 2.703 0 0 0-.605-.916 2.703 2.703 0 0 0-.916-.605 4.177 4.177 0 0 0-.745-.192 8.255 8.255 0 0 0-1.073-.104c-.42-.018-.755-.028-1.005-.032-.25-.003-.616-.003-1.1 0L12 5.438zM20 12c0 1.59-.017 2.691-.052 3.302-.07 1.445-.5 2.563-1.292 3.354-.791.792-1.91 1.222-3.354 1.292-.611.035-1.712.052-3.302.052s-2.691-.017-3.302-.052c-1.445-.07-2.563-.5-3.354-1.292-.792-.791-1.222-1.91-1.292-3.354C4.017 14.691 4 13.59 4 12s.017-2.691.052-3.302c.07-1.445.5-2.563 1.292-3.354.791-.792 1.91-1.222 3.354-1.292C9.309 4.017 10.41 4 12 4s2.691.017 3.302.052c1.445.07 2.563.5 3.354 1.292.792.791 1.222 1.91 1.292 3.354.035.611.052 1.712.052 3.302z"></path>
 					</svg>
 				</a>
-				<a href="https://www.twitter.com/@TheFishTankArt" target="_blank" rel="noopener" aria-label="Twitter">
-					<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
-						<path fill-rule="evenodd" d="M9.026 19.01c6.038 0 9.341-5.007 9.341-9.341 0-.141 0-.282-.006-.423A6.689 6.689 0 0020 7.543a6.654 6.654 0 01-1.889.519 3.303 3.303 0 001.447-1.819 6.53 6.53 0 01-2.087.794A3.277 3.277 0 0015.076 6a3.287 3.287 0 00-3.284 3.285c0 .256.032.505.083.749a9.323 9.323 0 01-6.767-3.432 3.292 3.292 0 001.018 4.386 3.32 3.32 0 01-1.486-.41v.045a3.29 3.29 0 002.632 3.22 3.198 3.198 0 01-.865.115c-.21 0-.416-.019-.614-.057a3.283 3.283 0 003.067 2.28 6.585 6.585 0 01-4.079 1.408A6.32 6.32 0 014 17.544a9.339 9.339 0 005.026 1.466z"></path>
+				<a href="https://www.tiktok.com/@attentiondefected" target="_blank" rel="noopener" aria-label="Twitter">
+					<svg viewBox="0 0 1024 1024" fill="currentColor" fillRule="evenodd" width="40" height="40">
+						<path d="M365.014.667C408.68 0 452.011.333 495.342 0c2.667 51 21 102.999 58.33 138.998 37.332 37 89.997 54 141.328 59.666v134.332c-47.998-1.667-96.33-11.667-139.994-32.333-19-8.667-36.665-19.667-53.998-31-.333 97.332.334 194.665-.666 291.663-2.667 46.666-18 93-44.998 131.332-43.665 64-119.328 105.665-196.992 106.999-47.664 2.666-95.329-10.334-135.994-34.333C55.028 725.658 7.696 652.992.697 574.993c-.667-16.667-1-33.333-.334-49.666 6-63.333 37.332-123.999 85.997-165.332 55.33-47.999 132.66-70.999 204.99-57.332.667 49.333-1.332 98.665-1.332 147.998-33-10.667-71.664-7.667-100.663 12.333-20.999 13.667-36.998 34.666-45.331 58.333-7 17-5 35.666-4.667 53.666 8 54.666 60.664 100.665 116.662 95.665 37.332-.333 72.997-22 92.33-53.666 6.332-11 13.332-22.333 13.665-35.333 3.334-59.666 2-118.998 2.334-178.664.333-134.332-.334-268.33.666-402.328" transform="translate(165 112)"/>
 					</svg>
+
 				</a>
 				<a href="https://www.youtube.com/channel/UCCQqjjh6doT8Koc5GNROUtw" target="_blank" rel="noopener" aria-label="YouTube">
 					<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
@@ -77,15 +30,20 @@
 					</svg>
 				</a>
 			</div>
+			</div>
 		</div>
 
 		<div id="copyright" class="row">
 			<div class="columns">
-				&copy;&nbsp;2025&nbsp;<a href="/" title="The Fish Tank">The Fish Tank</a> - All Rights Reserved.
+				<div class="copyright">
+					&copy;&nbsp;<?php echo date('Y'); ?>&nbsp;<a href="<?php echo esc_url(home_url('/')); ?>" title="The Fish Tank">The Fish Tank</a> - All Rights Reserved.
+				</div>
 			</div>
 		</div>
 	</div>
 </footer>
 
+<?php wp_footer(); ?>
 </body>
 </html>
+

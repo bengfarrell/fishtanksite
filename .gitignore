@@ -3,3 +3,17 @@ aws.json
 _site/
 node_modules/
 package-lock.json
+
+wpsite/*
+
+# But allow the fishtank theme
+!wpsite/app/
+wpsite/app/*
+!wpsite/app/public/
+wpsite/app/public/*
+!wpsite/app/public/wp-content/
+wpsite/app/public/wp-content/*
+!wpsite/app/public/wp-content/themes/
+wpsite/app/public/wp-content/themes/*
+!wpsite/app/public/wp-content/themes/fishtank/
+!wpsite/app/public/wp-content/themes/fishtank/**
