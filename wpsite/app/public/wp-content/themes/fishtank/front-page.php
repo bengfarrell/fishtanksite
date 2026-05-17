@@ -30,14 +30,6 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="section-teal">
-	<div class="container">
-		<h2 class="section-title">Win a Free Painting!</h2>
-		<p class="section-subtitle">Shoot us an email for your chance to win a free painting!</p>
-		<a href="<?php echo esc_url(home_url('/contact/')); ?>" class="button button-light">Enter to Win</a>
-	</div>
-</section>
-
 <section class="section-light">
 	<div class="container">
 		<h2 class="section-title">Featured Works</h2>
