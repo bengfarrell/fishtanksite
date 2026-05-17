@@ -91,6 +91,7 @@ get_header(); ?>
 <section class="section-dark">
 	<div class="container">
 		<h2 class="section-title">My Inspirations</h2>
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/headshot.jpg" height="500px" alt="headshot" />
 		<p class="section-content-centered">Are everywhere! I can find inspiration in a dream or a T.V. show. I have always been inspired by nature and animals. Waterfalls, space, and ocean themes are very common in my work. I seem to find a lot of commonality with people in the more nightmare or dark side of my expression. Take that for what it's worth. Music is always, and will always, be the backbeat and driving force behind the finish of any inspired idea I have.</p>
 	</div>
 </section>
