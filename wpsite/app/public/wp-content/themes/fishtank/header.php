@@ -4,17 +4,17 @@
 	<meta charset="<?php bloginfo('charset'); ?>"/>
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
-	<?php 
+
+	<?php
 	// SEO meta tags
 	$page_title = is_front_page() ? get_bloginfo('name') : wp_get_document_title();
 	$page_description = is_front_page() ? get_bloginfo('description') : get_the_excerpt();
 	$page_url = is_front_page() ? home_url() : get_permalink();
 	$page_image = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : get_template_directory_uri() . '/assets/images/hero-painting.jpg';
 	?>
-	
+
 	<meta name="description" content="<?php echo esc_attr($page_description); ?>" />
-	
+
 	<link rel="canonical" href="<?php echo esc_url($page_url); ?>"/>
 	<meta property="og:locale" content="en_US"/>
 	<meta property="og:type" content="website"/>
@@ -36,8 +36,10 @@
 <header id="top-menu" class="top-bar centered-nav" itemscope="itemscope">
 	<nav class="main-nav" role="navigation">
 		<ul class="nav-left">
-			<li class="menu-item"><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
-			<li class="menu-item"><a href="<?php echo esc_url(home_url('/portfolio/')); ?>">Portfolio</a></li>
+			<li class="menu-item"><a href="<?php echo esc_url(home_url('/shop/')); ?>">Shop</a></li>
+			<li class="menu-item">
+					<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php _e( 'View your shopping cart', 'fishtank' ); ?>">My Cart<?php if ( WC()->cart->get_cart_contents_count() > 0 ) : ?>&nbsp(<?php echo esc_html( WC()->cart->get_cart_contents_count() ); ?>)<?php endif; ?></a>
+			</li>
 		</ul>
 
 	<div class="logo-center" itemscope="itemscope" role="banner">
@@ -47,7 +49,8 @@
 	</div>
 
 		<ul class="nav-right">
-			<li class="menu-item"><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact Us</a></li>
+			<li class="menu-item"><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact</a></li>
+			<li class="menu-item"><a href="<?php echo esc_url(home_url('/portfolio/')); ?>">Portfolio</a></li>
 		</ul>
 	</nav>
 </header>
